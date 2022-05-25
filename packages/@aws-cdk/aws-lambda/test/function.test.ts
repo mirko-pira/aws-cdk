@@ -555,7 +555,7 @@ describe('function', () => {
         Template.fromStack(stack).hasResourceProperties('AWS::Lambda::Alias', {
           Name: 'prod',
           FunctionName: { Ref: 'MyLambdaCCE802FB' },
-          FunctionVersion: { 'Fn::GetAtt': ['MyLambdaCurrentVersionE7A382CC60ef151b20ae483ee1018f73f30bc10e', 'Version'] },
+          FunctionVersion: { 'Fn::GetAtt': ['MyLambdaCurrentVersionE7A382CC2eeae0edd9c706f9c3b9dd748e520c30', 'Version'] },
         });
       });
 

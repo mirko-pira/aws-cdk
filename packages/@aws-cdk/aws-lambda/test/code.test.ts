@@ -324,7 +324,7 @@ describe('code', () => {
               { Ref: 'AWS::Region' },
               '.',
               { Ref: 'AWS::URLSuffix' },
-              '/aws-cdk/assets:768d7b6c1d41b85135f498fe0cca69fea410be3c3322c69cf08690aaad29a610',
+              '/aws-cdk/assets:365bee5cebbdbc558f6dd156c471de4ffee75d9065d32eb9c2dc67a046b564c3',
             ]],
           },
         },
@@ -407,7 +407,7 @@ describe('code', () => {
       // then
       Template.fromStack(stack).hasResource('AWS::Lambda::Function', {
         Metadata: {
-          [cxapi.ASSET_RESOURCE_METADATA_PATH_KEY]: 'asset.dd84d39b518e69c0e62a55312372cdd9ab3ef901c74a4861d92e951215257b3c',
+          [cxapi.ASSET_RESOURCE_METADATA_PATH_KEY]: 'asset.59c577e6718093cd789a2b97fb4ef9ebe5712af4ad79b077d169723486d01272',
           [cxapi.ASSET_RESOURCE_METADATA_DOCKERFILE_PATH_KEY]: dockerfilePath,
           [cxapi.ASSET_RESOURCE_METADATA_DOCKER_BUILD_ARGS_KEY]: dockerBuildArgs,
           [cxapi.ASSET_RESOURCE_METADATA_DOCKER_BUILD_TARGET_KEY]: dockerBuildTarget,
@@ -431,7 +431,7 @@ describe('code', () => {
       // then
       Template.fromStack(stack).hasResource('AWS::Lambda::Function', {
         Metadata: {
-          [cxapi.ASSET_RESOURCE_METADATA_PATH_KEY]: 'asset.b7767e24de8d852617d9600e7a60395334454ca017d648f93b2d990aec7f50fd',
+          [cxapi.ASSET_RESOURCE_METADATA_PATH_KEY]: 'asset.f695038ae7702eac1cc229793752714205111041abf74586878adfd2a5383f02',
           [cxapi.ASSET_RESOURCE_METADATA_DOCKERFILE_PATH_KEY]: 'Dockerfile',
           [cxapi.ASSET_RESOURCE_METADATA_PROPERTY_KEY]: 'Code.ImageUri',
         },
@@ -495,7 +495,7 @@ describe('code', () => {
       // then
       Template.fromStack(stack).hasResource('AWS::Lambda::Function', {
         Metadata: {
-          [cxapi.ASSET_RESOURCE_METADATA_PATH_KEY]: 'asset.fbafdbb9ae8d1bae0def415b791a93c486d18ebc63270c748abecc3ac0ab9533',
+          [cxapi.ASSET_RESOURCE_METADATA_PATH_KEY]: 'asset.3a344dc0fb6f54265d6758ba328192bd12b7d3cf337aaebc3ca5dbb98e2a3aec',
           [cxapi.ASSET_RESOURCE_METADATA_IS_BUNDLED_KEY]: false,
           [cxapi.ASSET_RESOURCE_METADATA_PROPERTY_KEY]: 'Code',
         },
