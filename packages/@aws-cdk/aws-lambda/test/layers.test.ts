@@ -80,7 +80,7 @@ describe('layers', () => {
     // THEN
     Template.fromStack(stack).hasResource('AWS::Lambda::LayerVersion', {
       Metadata: {
-        'aws:asset:path': 'asset.cb0ff37e3b096334f1deca02130bdada2f80e552b059e274bb0265760e6ce56a',
+        'aws:asset:path': 'asset.8811a2632ac5564a08fd269e159298f7e497f259578b0dc5e927a1f48ab24d34',
         'aws:asset:is-bundled': false,
         'aws:asset:property': 'Content',
       },
