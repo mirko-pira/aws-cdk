@@ -346,6 +346,22 @@ export interface ApplicationLoadBalancedTaskImageOptions {
    * @default - No labels.
    */
   readonly dockerLabels?: { [key: string]: string };
+
+  /**
+   * Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its own.
+   *
+   * @default - none
+   */
+  readonly stopTimeout?: cdk.Duration;
+
+  /**
+   * The command that is passed to the container.
+   *
+   * If you provide a shell command as a single string, you have to quote command-line arguments.
+   *
+   * @default - CMD value built into container image.
+   */
+  readonly command?: string[];
 }
 
 /**

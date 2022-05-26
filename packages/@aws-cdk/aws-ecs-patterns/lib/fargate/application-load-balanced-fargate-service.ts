@@ -1,5 +1,5 @@
 import { ISecurityGroup, SubnetSelection } from '@aws-cdk/aws-ec2';
-import { FargatePlatformVersion, FargateService, FargateTaskDefinition } from '@aws-cdk/aws-ecs';
+import {FargatePlatformVersion, FargateService, FargateTaskDefinition, RuntimePlatform} from '@aws-cdk/aws-ecs';
 import * as cxapi from '@aws-cdk/cx-api';
 import { Construct } from 'constructs';
 import { ApplicationLoadBalancedServiceBase, ApplicationLoadBalancedServiceBaseProps } from '../base/application-load-balanced-service-base';
@@ -91,6 +91,15 @@ export interface ApplicationLoadBalancedFargateServiceProps extends ApplicationL
    * @default - A new security group is created.
    */
   readonly securityGroups?: ISecurityGroup[];
+
+  /**
+   * The operating system that your task definitions are running on.
+   *
+   * A runtimePlatform is supported only for tasks using the Fargate launch type.
+   *
+   * @default - Undefined.
+   */
+  readonly runtimePlatform?: RuntimePlatform;
 }
 
 /**
@@ -132,6 +141,7 @@ export class ApplicationLoadBalancedFargateService extends ApplicationLoadBalanc
         executionRole: taskImageOptions.executionRole,
         taskRole: taskImageOptions.taskRole,
         family: taskImageOptions.family,
+        runtimePlatform: props.runtimePlatform
       });
 
       // Create log driver if logging is enabled
@@ -147,6 +157,8 @@ export class ApplicationLoadBalancedFargateService extends ApplicationLoadBalanc
         environment: taskImageOptions.environment,
         secrets: taskImageOptions.secrets,
         dockerLabels: taskImageOptions.dockerLabels,
+        stopTimeout: taskImageOptions.stopTimeout,
+        command: taskImageOptions.command
       });
       container.addPortMappings({
         containerPort: taskImageOptions.containerPort || 80,
